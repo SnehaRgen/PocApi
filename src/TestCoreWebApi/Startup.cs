@@ -60,6 +60,7 @@ namespace TestCoreWebApi
          
             services.AddMvc(options=> 
             {
+                options.Filters.Add(new CorsAuthorizationFilterFactory("AllowSpecificOrigin"));
                 options.FormatterMappings.SetMediaTypeMappingForFormat("json", new MediaTypeHeaderValue("application/json"));
                 options.FormatterMappings.SetMediaTypeMappingForFormat("xml", new MediaTypeHeaderValue("application/xml"));
                 options.FormatterMappings.SetMediaTypeMappingForFormat("txt", new MediaTypeHeaderValue("text/plain"));
