@@ -13,6 +13,7 @@ using Microsoft.AspNet.Cors;
 
 namespace TestCoreWebApi.Controllers
 {
+    [EnableCors("AllowSpecificOrigin")]
     [Route("api/[controller]")]
     public class TestController : Controller
     {
