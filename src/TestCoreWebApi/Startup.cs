@@ -74,6 +74,8 @@ namespace TestCoreWebApi
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
+            app.UseCors(options => options.WithOrigins("http://frontend-snehargen.cloudapps.click2cloud.org"));
+            
             app.UseApplicationInsightsRequestTelemetry();
 
             app.UseApplicationInsightsExceptionTelemetry();
